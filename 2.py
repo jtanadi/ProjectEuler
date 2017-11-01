@@ -11,10 +11,8 @@ fibList = [1, 2]
 
 def fib():
     yield fibList[-2] + fibList[-1]
-    
 
-for i in range(50):
-    if next(fib()) <= 4000000:
-        fibList.append(next(fib()))
+while fibList[-1] <= 4000000:
+    fibList.append(next(fib()))
 
 print sum(fib for fib in fibList if fib % 2 == 0)
